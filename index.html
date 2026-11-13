@@ -10,7 +10,7 @@
 
 .beginner-guide{margin:0 0 18px;background:linear-gradient(145deg,#18294a,#111a2d);border-color:#53618d}.guide-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.guide-progress{background:#0b1428;border:1px solid var(--line);border-radius:12px;padding:10px 14px;white-space:nowrap;color:var(--muted);font-size:12px}.guide-progress b{font-size:22px;color:#83e1d6}.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.guide-step{display:flex;gap:11px;padding:13px;border:1px solid #35496d;background:#0c172b;border-radius:12px;min-width:0}.guide-number{flex:0 0 30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#6658cf;font-weight:800}.guide-step b{font-size:14px}.guide-step p{font-size:12px;color:var(--muted);margin:5px 0 9px}.guide-step button{font-size:12px;padding:7px 10px}.guide-check{display:flex;align-items:center;gap:6px;margin-top:8px!important;font-size:11px!important;color:#b9c8e4!important;font-weight:500!important}.guide-check input{width:auto;margin:0}.guide-step.done{border-color:#3d9d87;background:#102a2b}.guide-step.done .guide-number{background:#267e69}@media(max-width:850px){.guide-grid{grid-template-columns:1fr}.guide-head{align-items:flex-start;flex-direction:column}}
 
-</style></head>
+.video-notes{margin:0 0 18px;border-color:#7a6740;background:linear-gradient(145deg,#2b261c,#141d2e)}.video-notes .notes-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.video-notes h3{margin:0;font-size:19px}.notes-count{color:#f2d18b;font-weight:800}.notes-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.note-item{display:flex;gap:9px;align-items:flex-start;padding:11px;border:1px solid #514832;background:#171f30;border-radius:10px;font-size:13px}.note-item input{width:auto;flex:0 0 auto;margin:3px 0 0;accent-color:#e4b85f}.note-item b{color:#ffe1a1}.note-item.done{border-color:#478d77;background:#122a2a}.note-example{margin-top:12px;padding:12px;border-radius:10px;background:#0b1428;border:1px dashed #76643d;color:#e9e3d2;font-size:12px}.note-example code{color:#ffe1a1;white-space:normal}@media(max-width:850px){.notes-grid{grid-template-columns:1fr}}</style></head>
 <body>
 <header><div class="brand"><div class="logo">H</div><div><h1>HỒNG AI VIDEO STUDIO</h1><small>PREMIUM 2.0 · Free Creative Suite</small></div></div><span class="pill">✦ Local-first · Không bắt buộc API</span></header>
 <main class="wrap">
@@ -27,6 +27,24 @@
   <article class="guide-step"><div class="guide-number">6</div><div><b>Tải và lưu sản phẩm</b><p>Xem lại video, bấm tải video WebM. Có thể tải thêm dự án JSON để mở lại và chỉnh sửa sau.</p><button type="button" data-go="export">Mở lưu dự án →</button><label class="guide-check"><input type="checkbox" data-done="5"> Tôi đã tải/lưu sản phẩm</label></div></article>
  </div>
  <div class="hint" style="margin-top:12px"><b>Lưu ý quan trọng:</b> HỒNG AI VIDEO STUDIO hiện hỗ trợ viết prompt, thử giọng có sẵn trên thiết bị, tạo chuyển động 2D từ ảnh và dựng video WebM từ ảnh. Việc tạo video AI có nhân vật nói/chuyển động thật phải thực hiện trên Flow/Veo hoặc dịch vụ AI bên ngoài. App không tự đăng nhập hay tự tạo video trên các dịch vụ đó.</div>
+</section>
+
+<section class="panel video-notes" id="videoNotes" aria-label="Lưu ý khi tạo video">
+ <div class="notes-head">
+  <div><span class="pill">CHECKLIST KIỂM TRA VIDEO</span><h3>⚠️ Lưu ý quan trọng khi tạo video</h3><p class="muted" style="margin:4px 0 0">Đánh dấu từng mục sau khi đã đưa yêu cầu vào prompt và kiểm tra kết quả. Tiến độ được lưu trên trình duyệt này.</p></div>
+  <div><span class="notes-count" id="videoNotesCount">0/8 đã kiểm tra</span> <button type="button" id="resetVideoNotes">Bỏ đánh dấu</button></div>
+ </div>
+ <div class="notes-grid">
+  <label class="note-item"><input type="checkbox" data-video-note="0"><span><b>1. Đúng lượt người nói</b><br>Nam đọc hết câu của mình, dừng hẳn rồi nữ mới bắt đầu. Không để hai người nói cùng lúc nếu kịch bản không yêu cầu.</span></label>
+  <label class="note-item"><input type="checkbox" data-video-note="1"><span><b>2. Có khoảng nghỉ giữa hai lượt thoại</b><br>Chừa khoảng nghỉ ngắn sau câu của nam và trước câu của nữ để giọng đọc, hình ảnh không bị chồng lấn.</span></label>
+  <label class="note-item"><input type="checkbox" data-video-note="2"><span><b>3. Khớp khẩu hình với lời thoại</b><br>Chỉ nhân vật đang nói mới cử động miệng; khẩu hình phải theo đúng âm tiết và thời lượng lời thoại. Người còn lại giữ miệng tự nhiên, không mấp máy.</span></label>
+  <label class="note-item"><input type="checkbox" data-video-note="3"><span><b>4. Đúng giọng, đúng nhân vật</b><br>Giọng nam gắn với nhân vật nam; giọng nữ gắn với nhân vật nữ. Không tự đổi giọng hoặc đổi người đọc giữa các câu.</span></label>
+  <label class="note-item"><input type="checkbox" data-video-note="4"><span><b>5. Giữ nguyên lời thoại</b><br>Đọc đúng từng câu trong kịch bản; không tự thêm, bớt, đảo câu hoặc để nhân vật nói lời của nhau.</span></label>
+  <label class="note-item"><input type="checkbox" data-video-note="5"><span><b>6. Đúng người trong khung hình</b><br>Khi nam nói, ưu tiên khung hình thấy rõ nhân vật nam; khi nữ nói, chuyển sang hoặc giữ khung hình thấy rõ nhân vật nữ.</span></label>
+  <label class="note-item"><input type="checkbox" data-video-note="6"><span><b>7. Giữ nhân vật và bối cảnh nhất quán</b><br>Không thay đổi khuôn mặt, trang phục, kiểu tóc, vị trí, ánh sáng và phông nền giữa các cảnh nối tiếp.</span></label>
+  <label class="note-item"><input type="checkbox" data-video-note="7"><span><b>8. Xem lại âm thanh và hình trước khi xuất</b><br>Nghe toàn bộ lời thoại, kiểm tra thứ tự nam–nữ, độ trễ khẩu hình, âm thanh bị cắt và các đoạn nói chồng nhau.</span></label>
+ </div>
+ <div class="note-example"><b>Mẫu câu lệnh có thể thêm vào prompt:</b><br><code>Hai nhân vật đối thoại lần lượt, không nói chồng tiếng. Nhân vật nam nói trước và phải nói hết toàn bộ câu thoại của mình; sau khi nam kết thúc và có một khoảng nghỉ ngắn, nhân vật nữ mới bắt đầu nói. Khi một nhân vật nói, chỉ miệng nhân vật đó chuyển động khớp chính xác với lời thoại; nhân vật còn lại giữ miệng khép tự nhiên và lắng nghe. Giữ đúng giọng nói gắn với từng nhân vật, không tráo lời, không tự ý thêm hoặc bỏ câu.</code><br><span class="tiny">Lưu ý: Đây là yêu cầu hướng dẫn AI trong prompt, không phải cam kết đồng bộ khẩu hình hoàn hảo. Cần dùng công cụ AI có hỗ trợ lip-sync/đồng bộ khẩu hình và xem lại kết quả; nếu chỉ dựng ảnh bằng timeline của ứng dụng thì không tạo được khẩu hình nói thật.</span></div>
 </section>
 <nav class="tabs">
 <button class="tab active" data-tab="create">✦ Studio</button><button class="tab" data-tab="voice">🎙 Giọng đọc</button><button class="tab" data-tab="images">Ảnh thành video</button><button class="tab" data-tab="timeline">🎞 Dựng video</button><button class="tab" data-tab="export">Xuất & lưu dự án</button><button class="tab" data-tab="connect">Kết nối & triển khai</button>
@@ -169,5 +187,12 @@ document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=
 function refreshGuideProgress(){let boxes=[...document.querySelectorAll('[data-done]')],n=boxes.filter(x=>x.checked).length;const out=document.getElementById('guideDone');if(out)out.textContent=n+'/6';boxes.forEach(x=>{const card=x.closest('.guide-step');if(card)card.classList.toggle('done',x.checked)});try{localStorage.setItem('hongVideoGuideDone',JSON.stringify(boxes.map(x=>x.checked)))}catch(e){}}
 try{const saved=JSON.parse(localStorage.getItem('hongVideoGuideDone')||'[]');document.querySelectorAll('[data-done]').forEach((x,i)=>x.checked=!!saved[i])}catch(e){}
 document.querySelectorAll('[data-done]').forEach(x=>x.addEventListener('change',refreshGuideProgress));refreshGuideProgress();
+
+// Checklist lưu ý tạo video: lưu trạng thái riêng trên trình duyệt
+function refreshVideoNotes(){const boxes=[...document.querySelectorAll('[data-video-note]')];const n=boxes.filter(x=>x.checked).length;const out=document.getElementById('videoNotesCount');if(out)out.textContent=n+'/'+boxes.length+' đã kiểm tra';boxes.forEach(x=>{const item=x.closest('.note-item');if(item)item.classList.toggle('done',x.checked)});try{localStorage.setItem('hongVideoNotesChecked',JSON.stringify(boxes.map(x=>x.checked)))}catch(e){}}
+try{const savedNotes=JSON.parse(localStorage.getItem('hongVideoNotesChecked')||'[]');document.querySelectorAll('[data-video-note]').forEach((x,i)=>x.checked=!!savedNotes[i])}catch(e){}
+document.querySelectorAll('[data-video-note]').forEach(x=>x.addEventListener('change',refreshVideoNotes));
+const resetNotes=document.getElementById('resetVideoNotes');if(resetNotes)resetNotes.addEventListener('click',()=>{document.querySelectorAll('[data-video-note]').forEach(x=>x.checked=false);refreshVideoNotes()});
+refreshVideoNotes();
 
 </script></body></html>
